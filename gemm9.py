@@ -33,11 +33,6 @@ def compute_kernel(A, B, C, D, E, alpha, beta, gamma):
     return f
 
 def compute_kernel_optimized(A, B, C, D, E, alpha, beta, gamma):
-    # Apply optimizations here, for example:
-    # 1. Use hcl.dot() instead of hcl.sum() for matrix multiplication
-    # 2. Use data type optimizations like using hcl.Float() instead of hcl.Float()
-    # 3. Implement memory optimizations like using in-place operations if possible
-
     pass
 
 # Generate random matrices with specified dimensions
@@ -55,17 +50,6 @@ start_time = time.time()
 f_naive = compute_kernel(A, B, C, D, E, alpha, beta, gamma)
 naive_result = f_naive(A, B, C, D, E, F)
 naive_time = time.time() - start_time
-
-# Optimized computation
-# start_time = time.time()
-# f_optimized = compute_kernel_optimized(A, B, C, D, E, alpha, beta, gamma)
-# optimized_result = f_optimized(A, B, C, D, E, F)
-# optimized_time = time.time() - start_time
-
-# Verify results
-# np_result = alpha * np.matmul(A, B) * beta * np.matmul(C, D) + gamma * E
-# assert np.allclose(naive_result, np_result)
-# assert np.allclose(optimized_result, np_result)
 
 print("Naive computation time:", naive_time)
 print("Optimized computation time:", optimized_time)
