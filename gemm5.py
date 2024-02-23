@@ -9,7 +9,7 @@ def compute_kernel(A, B, C, D, E, alpha, beta, gamma):
     F = hcl.compute((P, T), lambda p, t: alpha * hcl.sum(A[p, Q] * B[Q, R] * C[R, S] * D[S, t], axis=[Q, R, S]) + gamma * E[p, t])
     return F
 
-# Create test data (random matrices)
+# Create test data
 A_np = np.random.rand(P, Q)
 B_np = np.random.rand(Q, R)
 C_np = np.random.rand(R, S)
@@ -44,9 +44,6 @@ expected_result = alpha * np.matmul(A_np, B_np) * beta * np.matmul(C_np, D_np) +
 assert np.allclose(F_np, expected_result)
 
 print("HeteroCL implementation is correct!")
-
-# Time the computation (optional)
-# Use Linux 'time' command to measure execution time
 
 # Save the Python file
 with open("heterocl_matrix_computation.py", "w") as f:
