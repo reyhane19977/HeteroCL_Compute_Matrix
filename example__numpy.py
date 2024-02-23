@@ -7,10 +7,10 @@ def compute_F(A, B, C, D, E, alpha, beta, gamma):
     F = alpha * np.matmul(AB, beta * CD) + gamma * E
     return F
 
-# Example dimensions (you can replace these with your actual matrices)
+# Example dimensions
 P, Q, R, S, T = 3, 4, 5, 6, 7
 
-# Generate random matrices (you can replace these with your actual data)
+# Generate random matrices
 A = np.random.rand(P, Q)
 B = np.random.rand(Q, R)
 C = np.random.rand(R, S)
@@ -28,9 +28,8 @@ F_naive = compute_F(A, B, C, D, E, alpha, beta, gamma)
 # Print the result
 print("Naive F:\n", F_naive)
 
-# You can add your optimizations here (e.g., loop unrolling, data type optimizations)
 
-# Test bench in HeteroCL (assuming you have HeteroCL installed)
+# Test bench in HeteroCL
 from heterocl import *
 
 def test_bench():
